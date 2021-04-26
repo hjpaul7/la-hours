@@ -5,6 +5,7 @@ import "antd/dist/antd.css";
 import Auth from "./components/Auth/Auth";
 import LayoutNav from "./components/Layout";
 import { BrowserRouter as Router } from "react-router-dom";
+import Nav from "./components/Home/Nav";
 
 function App() {
   const [token, setToken] = useState("");
@@ -42,13 +43,7 @@ function App() {
   const protectedViews = () => {
     return (token === localStorage.getItem("token")) |
       (localStorage.getItem("token") === !undefined) ? (
-      <Router>
-        <LayoutNav
-          token={token}
-          clickLogout={clearToken}
-          firstName={firstName}
-        />
-      </Router>
+      <LayoutNav token={token} clickLogout={clearToken} firstName={firstName} />
     ) : (
       <Auth updateToken={updateToken} updatedFirstName={updatedFirstName} />
     );

@@ -22,7 +22,7 @@ const LearningAssistantCard = (props) => {
       actions={[
         <a href={props.mappedActive.zoomLink} target="_blank">
           <img
-            src="http://assets.stickpng.com/thumbs/5e8ce423664eae0004085465.png"
+            src="http://assets.stickpng.com/images/5e8ce318664eae0004085461.png"
             alt="zoom"
             style={{ width: "20px", height: "20px" }}
           />

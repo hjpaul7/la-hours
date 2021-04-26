@@ -1,11 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import { Card, Avatar, Input, Button } from "antd";
+import { Card, Avatar, Input, Button, Spin } from "antd";
 import {
   EditOutlined,
   EllipsisOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
+import "./Auth.css";
 
 const Auth = (props) => {
   const [firstName, setFirstName] = useState("");
@@ -13,6 +14,7 @@ const Auth = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const { Meta } = Card;
 
@@ -47,6 +49,7 @@ const Auth = (props) => {
         // console.log(props.updatedFirstName);
         console.log(data.user.firstName);
       });
+    setLoading(true);
   };
 
   const title = () => {
@@ -135,9 +138,16 @@ const Auth = (props) => {
           <br />
           <br />
           <div>
-            <Button htmlType="submit" type="primary" danger>
+            {!loading ? (
+              <Button htmlType="submit" type="primary" danger>
+                {title()}
+              </Button>
+            ) : (
+              <Spin />
+            )}
+            {/* <Button htmlType="submit" type="primary" danger>
               {title()}
-            </Button>
+            </Button> */}
           </div>
           <br />
           {/* <button onClick={loginToggle}>{authTitleToggle()}</button> */}
@@ -148,7 +158,7 @@ const Auth = (props) => {
   };
 
   return (
-    <header className="App-header">
+    <div className="auth">
       <Card
         style={{ width: 600 }}
         cover={
@@ -171,7 +181,7 @@ const Auth = (props) => {
           description={authForm()}
         />
       </Card>
-    </header>
+    </div>
   );
 };
 
