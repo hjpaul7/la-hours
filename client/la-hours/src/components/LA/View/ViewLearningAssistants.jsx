@@ -24,7 +24,7 @@ const ViewLearningAssistants = (props) => {
         </Col>
       ))
     ) : (
-      <Col span={24}>
+      <Col>
         <Spin style={{ paddingBottom: "40px" }} />
       </Col>
     );
@@ -39,7 +39,7 @@ const ViewLearningAssistants = (props) => {
         />
       </Col>
     ) : (
-      <Col span={24}>
+      <Col>
         <Spin style={{ paddingBottom: "40px" }} />
       </Col>
     );

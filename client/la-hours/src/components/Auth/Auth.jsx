@@ -46,7 +46,6 @@ const Auth = (props) => {
       .then((data) => {
         props.updateToken(data.token);
         props.updatedFirstName(data.user.firstName);
-        // console.log(props.updatedFirstName);
         console.log(data.user.firstName);
       });
     setLoading(true);
@@ -145,12 +144,8 @@ const Auth = (props) => {
             ) : (
               <Spin />
             )}
-            {/* <Button htmlType="submit" type="primary" danger>
-              {title()}
-            </Button> */}
           </div>
           <br />
-          {/* <button onClick={loginToggle}>{authTitleToggle()}</button> */}
           {authButtonToggle()}
         </form>
       </div>
