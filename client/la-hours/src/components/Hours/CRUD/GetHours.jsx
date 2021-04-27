@@ -5,6 +5,7 @@ import ViewHours from "../View/ViewHours";
 
 const GetHours = (props) => {
   const [hours, setHours] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const fetchHours = async () => {
     try {
@@ -18,6 +19,7 @@ const GetHours = (props) => {
           console.log(res.data);
           setHours(res.data);
         });
+      setLoading(true);
       return data;
     } catch (error) {
       console.log("error", error);
@@ -29,7 +31,12 @@ const GetHours = (props) => {
   }, []);
 
   return (
-    <ViewHours token={props.token} fetchHours={fetchHours} hours={hours} />
+    <ViewHours
+      token={props.token}
+      fetchHours={fetchHours}
+      hours={hours}
+      loading={loading}
+    />
   );
 };
 export default GetHours;

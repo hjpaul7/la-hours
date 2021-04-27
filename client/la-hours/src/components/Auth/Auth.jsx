@@ -163,9 +163,8 @@ const Auth = (props) => {
           />
         }
         actions={[
-          <SettingOutlined key="setting" />,
-          <EditOutlined key="edit" />,
-          <EllipsisOutlined key="ellipsis" />,
+          <p>Forgot Password?</p>,
+          <a href="https://learninggym-3a62e.web.app/">Learning Gym</a>,
         ]}
       >
         <Meta

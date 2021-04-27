@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Card, Button, Row, Col } from "antd";
+import { Table, Card, Button, Row, Col, Spin } from "antd";
 import { deleteHours } from "../CRUD/DeleteHours";
 
 const ViewHours = (props) => {
@@ -45,22 +45,26 @@ const ViewHours = (props) => {
   return (
     <>
       <Row justify="center">
-        <Card title="Your hours" size="small" style={{ width: 900 }}>
-          <Table
-            size="small"
-            columns={columns}
-            rowKey={(record) => record.id}
-            expandable={{
-              expandedRowRender: (record) => (
-                <p key={record.id} style={{ margin: 0 }}>
-                  {record.description}
-                </p>
-              ),
-              rowExpandable: (record) => record.name !== "Not Expandable",
-            }}
-            dataSource={props.hours}
-          />
-        </Card>
+        {props.loading ? (
+          <Card title="Your hours" size="small" style={{ width: 900 }}>
+            <Table
+              size="small"
+              columns={columns}
+              rowKey={(record) => record.id}
+              expandable={{
+                expandedRowRender: (record) => (
+                  <p key={record.id} style={{ margin: 0 }}>
+                    {record.description}
+                  </p>
+                ),
+                rowExpandable: (record) => record.name !== "Not Expandable",
+              }}
+              dataSource={props.hours}
+            />
+          </Card>
+        ) : (
+          <Spin style={{ paddingBottom: "40px" }} />
+        )}
       </Row>
     </>
   );

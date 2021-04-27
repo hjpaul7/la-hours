@@ -30,15 +30,18 @@ const Nav = (props) => {
             <Anchor targetOffset="65">
               <Link href="/" title="Home" />
               <RouterLink to="/hours">
-                <Link href="#features" title="Hours" />
+                <Link to="/hours" title="Hours" />
               </RouterLink>
-              <Link href="#about" title="Invoices" />
-              <Link href="#faq" title="LG" />
-              <Link href="#works" title="Office" />
-              <Link href="#pricing" title="Assignments" />
+              <Link href="/invoices" title="Invoices" />
+              <Link href="https://learninggym-3a62e.web.app/" title="LG" />
+              <Link href="https://www.office.com/" title="Office" />
+              <Link
+                href="https://elevenfiftyacademy-my.sharepoint.com/:x:/r/personal/hcurry_elevenfifty_org/_layouts/15/Doc.aspx?sourcedoc=%7BD90C7781-6FA3-4BF3-8D35-2BEEFF2BE24B%7D&file=Instructor%20%26%20LA%20Assignments.xlsx&action=default&mobileredirect=true"
+                title="Assignments"
+              />
               <RouterLink to="/">
                 <a onClick={props.clickLogout}>
-                  <Link href="#" title="Logout" />
+                  <Link href="/" title="Logout" />
                 </a>
               </RouterLink>
             </Anchor>
@@ -53,13 +56,18 @@ const Nav = (props) => {
               onClose={onClose}
               visible={visible}
             >
-              <Anchor targetOffset="65" onClick={props.clickLogout}>
-                <Link href="#hero" title="Home" />
-                <Link href="#features" title="Hours" />
-                <Link href="#about" title="Invoices" />
-                <Link href="#faq" title="LG" />
-                <Link href="#works" title="Office" />
-                <Link href="#pricing" title="Assignments" />
+              <Anchor targetOffset="65">
+                <Link href="/" title="Home" />
+                <RouterLink to="/hours">
+                  <Link title="Hours" />
+                </RouterLink>
+                <Link href="#" title="Invoices" />
+                <Link href="https://learninggym-3a62e.web.app/" title="LG" />
+                <Link href="https://www.office.com/" title="Office" />
+                <Link
+                  href="https://elevenfiftyacademy-my.sharepoint.com/:x:/r/personal/hcurry_elevenfifty_org/_layouts/15/Doc.aspx?sourcedoc=%7BD90C7781-6FA3-4BF3-8D35-2BEEFF2BE24B%7D&file=Instructor%20%26%20LA%20Assignments.xlsx&action=default&mobileredirect=true"
+                  title="Assignments"
+                />
                 <RouterLink to="/">
                   <a onClick={props.clickLogout}>
                     <Link href="#" title="Logout" />
