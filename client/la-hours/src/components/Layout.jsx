@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Home/Home";
 import Nav from "./Home/Nav";
 import AppFooter from "./Home/Footer";
-import Test from "./Invoices/View/Test";
-import ViewHours from "./Hours/View/ViewHours";
 import GetHours from "./Hours/CRUD/GetHours";
 
 const { Header, Content, Footer } = Layout;
@@ -28,9 +26,6 @@ const LayoutNav = (props) => {
                   </Route>
                   <Route exact path="/hours">
                     <GetHours token={props.token} />
-                  </Route>
-                  <Route exact path="/test">
-                    <Test />
                   </Route>
                 </Switch>
               </div>

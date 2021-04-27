@@ -36,9 +36,6 @@ const Nav = (props) => {
               <Link href="#faq" title="LG" />
               <Link href="#works" title="Office" />
               <Link href="#pricing" title="Assignments" />
-              <RouterLink to="/test">
-                <Link href="/test" title="Test" />
-              </RouterLink>
               <RouterLink to="/">
                 <a onClick={props.clickLogout}>
                   <Link href="#" title="Logout" />
@@ -63,9 +60,11 @@ const Nav = (props) => {
                 <Link href="#faq" title="LG" />
                 <Link href="#works" title="Office" />
                 <Link href="#pricing" title="Assignments" />
-                <a onClick={props.clickLogout}>
-                  <Link href="#" title="Logout" />
-                </a>
+                <RouterLink to="/">
+                  <a onClick={props.clickLogout}>
+                    <Link href="#" title="Logout" />
+                  </a>
+                </RouterLink>
               </Anchor>
             </Drawer>
           </div>

@@ -10,7 +10,6 @@ const Home = (props) => {
   return (
     <div className="smallestBreakpoint">
       <Row justify="center" gutter={[16, 16]}>
-        {/* <Col span={5}> */}
         <Col
           xs={{ span: 24 }}
           sm={{ span: 24 }}
@@ -31,7 +30,7 @@ const Home = (props) => {
           <ViewInvoices />
         </Col>
       </Row>
-      <Row justify="center">
+      <Row justify="center" gutter={[16, 16]} className="la-fetches-responsive">
         <LAFetches />
       </Row>
     </div>

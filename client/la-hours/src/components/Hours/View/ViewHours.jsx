@@ -45,7 +45,7 @@ const ViewHours = (props) => {
   return (
     <>
       <Row justify="center">
-        <Card title="Your hours" size="small" style={{ width: 500 }}>
+        <Card title="Your hours" size="small" style={{ width: 900 }}>
           <Table
             size="small"
             columns={columns}

@@ -8,11 +8,12 @@ const ViewLearningAssistants = (props) => {
     return props.loading ? (
       props.active?.map((mappedActive, index) => (
         <Col
-          xs={{ span: 24 }}
-          sm={{ span: 24 }}
+          xs={{ span: 16 }}
+          sm={{ span: 14 }}
           md={{ span: 10 }}
-          xl={{ span: 8 }}
-          xxl={{ span: 5 }}
+          lg={{ span: 8 }}
+          xl={{ span: 10 }}
+          xxl={{ span: 7 }}
           className="gutter-row"
         >
           <LearningAssistantCard
@@ -53,7 +54,6 @@ const ViewLearningAssistants = (props) => {
   }
   return (
     <>
-      {/* <Row justify="center"> */}
       <Col span={24}>
         {props.active.length === 0 ? (
           <Divider orientation="center" style={{ paddingBottom: "10px" }}>
@@ -65,10 +65,7 @@ const ViewLearningAssistants = (props) => {
           </Divider>
         )}
       </Col>
-      {/* </Row> */}
-      {/* <Row justify="center" align="middle"> */}
       {activeTodayContainer()}
-      {/* </Row> */}
     </>
   );
 };
