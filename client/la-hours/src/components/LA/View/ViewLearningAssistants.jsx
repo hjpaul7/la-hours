@@ -15,6 +15,7 @@ const ViewLearningAssistants = (props) => {
           xl={{ span: 10 }}
           xxl={{ span: 7 }}
           className="gutter-row"
+          key={index}
         >
           <LearningAssistantCard
             active={props.active}
@@ -46,22 +47,41 @@ const ViewLearningAssistants = (props) => {
   }
 
   function activeTodayContainer() {
-    if (props.active.length !== 0) {
+    if (props.active?.length !== 0) {
       return Active();
     } else {
       return todayIfNoActive();
     }
   }
+
+  // async function activeTodayContainer() {
+  //   if (props.active?.length !== 0) {
+  //     return Active();
+  //   } else {
+  //     await delay(5000);
+  //     return todayIfNoActive();
+  //   }
+  // }
+
   return (
     <>
       <Col span={24}>
-        {props.active.length === 0 ? (
+        {/* {props.active.length === 0 ? (
           <Divider orientation="center" style={{ paddingBottom: "10px" }}>
             Today's Learning Gym Schedule
           </Divider>
         ) : (
           <Divider orientation="center" style={{ paddingBottom: "10px" }}>
             Available Learning Assistants
+          </Divider>
+        )} */}
+        {props.active.length !== 0 && props.loading ? (
+          <Divider orientation="center" style={{ paddingBottom: "10px" }}>
+            Available Learning Assistants
+          </Divider>
+        ) : (
+          <Divider orientation="center" style={{ paddingBottom: "10px" }}>
+            Today's Learning Gym Schedule
           </Divider>
         )}
       </Col>

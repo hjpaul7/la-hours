@@ -11,7 +11,6 @@ const { Meta } = Card;
 const LearningAssistantCard = (props) => {
   return (
     <Card
-      key={props.index}
       style={{ width: 300, marginBottom: "40px" }}
       cover={
         <Image

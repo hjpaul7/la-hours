@@ -10,7 +10,7 @@ const CreateHours = (props) => {
   const [hours, setHours] = useState(0);
   const [description, setDescription] = useState("");
 
-  const dateFormatList = ["DD/MM/YYYY"];
+  const dateFormat = ["MM/DD/YYYY"];
 
   const handleSubmit = (e) => {
     // e.preventDefault();
@@ -35,14 +35,12 @@ const CreateHours = (props) => {
         setRole("");
         setHours();
         setDescription("");
-        // props.fetchHours();
+        props.fetchHours();
       });
   };
 
   return (
-    // <div>
-    <Col span={4}>
-      <h4>Add hours worked below</h4>
+    <Col span={12}>
       <Form
         labelCol={{ span: 4 }}
         wrapperCol={{ span: 14 }}
@@ -82,14 +80,15 @@ const CreateHours = (props) => {
             disabledMinutes
             disabledSeconds
             name="date"
-            defaultValue={moment("01/03/2021", dateFormatList)}
-            format={dateFormatList}
+            // defaultValue={moment("01/03/2021", dateFormatList)}
+            defaultValue={moment()}
+            format={dateFormat}
             // value={date}
             // onChange={(e) => setDate(e.target.value)}
             onChange={(date, dateString) => setDate(date, dateString)}
           />
         </Form.Item>
-        <Form.Item label="Hours Worked">
+        <Form.Item label="Hours">
           <Input
             name="hours"
             value={hours}
@@ -110,7 +109,6 @@ const CreateHours = (props) => {
         </Form.Item>
       </Form>
     </Col>
-    // </div>
   );
 };
 

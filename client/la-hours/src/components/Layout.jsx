@@ -5,6 +5,7 @@ import Home from "./Home/Home";
 import Nav from "./Home/Nav";
 import AppFooter from "./Home/Footer";
 import GetHours from "./Hours/CRUD/GetHours";
+import CreateHours from "./Hours/CRUD/CreateHours";
 
 const { Header, Content, Footer } = Layout;
 

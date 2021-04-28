@@ -1,6 +1,7 @@
 import React from "react";
 import { Table, Card, Button, Row, Col, Spin } from "antd";
 import { deleteHours } from "../CRUD/DeleteHours";
+import CreateHours from "../CRUD/CreateHours";
 
 const ViewHours = (props) => {
   const columns = [
@@ -45,6 +46,7 @@ const ViewHours = (props) => {
   return (
     <>
       <Row justify="center">
+        <CreateHours token={props.token} fetchHours={props.fetchHours} />
         {props.loading ? (
           <Card title="Your hours" size="small" style={{ width: 900 }}>
             <Table
