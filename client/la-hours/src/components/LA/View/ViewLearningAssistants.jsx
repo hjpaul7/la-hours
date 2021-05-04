@@ -54,27 +54,9 @@ const ViewLearningAssistants = (props) => {
     }
   }
 
-  // async function activeTodayContainer() {
-  //   if (props.active?.length !== 0) {
-  //     return Active();
-  //   } else {
-  //     await delay(5000);
-  //     return todayIfNoActive();
-  //   }
-  // }
-
   return (
     <>
       <Col span={24}>
-        {/* {props.active.length === 0 ? (
-          <Divider orientation="center" style={{ paddingBottom: "10px" }}>
-            Today's Learning Gym Schedule
-          </Divider>
-        ) : (
-          <Divider orientation="center" style={{ paddingBottom: "10px" }}>
-            Available Learning Assistants
-          </Divider>
-        )} */}
         {props.active.length !== 0 && props.loading ? (
           <Divider orientation="center" style={{ paddingBottom: "10px" }}>
             Available Learning Assistants

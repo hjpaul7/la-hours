@@ -6,6 +6,7 @@ import Auth from "./components/Auth/Auth";
 import LayoutNav from "./components/Layout";
 import { BrowserRouter as Router } from "react-router-dom";
 import Nav from "./components/Home/Nav";
+import Test from "./components/test";
 
 function App() {
   const [token, setToken] = useState("");
@@ -49,7 +50,12 @@ function App() {
     );
   };
 
-  return <div className="App">{protectedViews()}</div>;
+  return (
+    <div className="App">
+      {protectedViews()}
+      <Test />
+    </div>
+  );
 }
 
 export default App;

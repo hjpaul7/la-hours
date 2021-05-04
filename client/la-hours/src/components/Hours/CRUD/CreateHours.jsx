@@ -40,75 +40,73 @@ const CreateHours = (props) => {
   };
 
   return (
-    <Col span={12}>
-      <Form
-        labelCol={{ span: 4 }}
-        wrapperCol={{ span: 14 }}
-        layout="horizontal"
-        onFinish={handleSubmit}
-        // initialValues={{ size: componentSize }}
-        // onValuesChange={onFormLayoutChange}
-        // size={componentSize as SizeType}
-      >
-        <Form.Item label="Name">
-          <Input
-            name="name"
-            value={name}
-            required
-            onChange={(e) => setName(e.target.value)}
-          />
-        </Form.Item>
-        <Form.Item label="Role">
-          {/* <Select>
+    <Form
+      labelCol={{ span: 4 }}
+      wrapperCol={{ span: 14 }}
+      layout="horizontal"
+      onFinish={handleSubmit}
+      // initialValues={{ size: componentSize }}
+      // onValuesChange={onFormLayoutChange}
+      // size={componentSize as SizeType}
+    >
+      <Form.Item label="Name">
+        <Input
+          name="name"
+          value={name}
+          required
+          onChange={(e) => setName(e.target.value)}
+        />
+      </Form.Item>
+      <Form.Item label="Role">
+        {/* <Select>
             <Select.Option name="role" value={role}>
               Instructor
             </Select.Option> */}
-          {/* <Select.Option value={role}>Trainie</Select.Option> */}
-          {/* <Select.Option value={role} key={role}>
+        {/* <Select.Option value={role}>Trainie</Select.Option> */}
+        {/* <Select.Option value={role} key={role}>
               Learning Assitant
             </Select.Option>
           </Select> */}
-          <Input
-            name="role"
-            value={role}
-            onChange={(e) => setRole(e.target.value)}
-          />
-        </Form.Item>
+        <Input
+          name="role"
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
+        />
+      </Form.Item>
 
-        <Form.Item label="Date">
-          <DatePicker
-            disabledMinutes
-            disabledSeconds
-            name="date"
-            // defaultValue={moment("01/03/2021", dateFormatList)}
-            defaultValue={moment()}
-            format={dateFormat}
-            // value={date}
-            // onChange={(e) => setDate(e.target.value)}
-            onChange={(date, dateString) => setDate(date, dateString)}
-          />
-        </Form.Item>
-        <Form.Item label="Hours">
-          <Input
-            name="hours"
-            value={hours}
-            required
-            onChange={(e) => setHours(e.target.value)}
-          />
-        </Form.Item>
-        <Form.Item label="Description">
-          <Input
-            name="description"
-            value={description}
-            required
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </Form.Item>
-        <Form.Item label="Submit">
-          <Button htmlType="submit">Submit</Button>
-        </Form.Item>
-      </Form>
-    </Col>
+      <Form.Item label="Date">
+        <DatePicker
+          disabledMinutes
+          disabledSeconds
+          name="date"
+          // defaultValue={moment("01/03/2021", dateFormatList)}
+          defaultValue={moment()}
+          format={dateFormat}
+          // value={date}
+          // onChange={(e) => setDate(e.target.value)}
+          onChange={(date, dateString) => setDate(date, dateString)}
+        />
+      </Form.Item>
+      <Form.Item label="Hours">
+        <Input
+          name="hours"
+          value={hours}
+          required
+          onChange={(e) => setHours(e.target.value)}
+        />
+      </Form.Item>
+      <Form.Item label="Description">
+        <Input
+          name="description"
+          value={description}
+          required
+          onChange={(e) => setDescription(e.target.value)}
+        />
+      </Form.Item>
+      <Form.Item label="Submit">
+        <Button htmlType="submit">Submit</Button>
+      </Form.Item>
+    </Form>
   );
 };
 

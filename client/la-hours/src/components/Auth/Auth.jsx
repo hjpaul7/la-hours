@@ -1,11 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Card, Avatar, Input, Button, Spin } from "antd";
-import {
-  EditOutlined,
-  EllipsisOutlined,
-  SettingOutlined,
-} from "@ant-design/icons";
+import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import "./Auth.css";
 
 const Auth = (props) => {
@@ -122,6 +118,7 @@ const Auth = (props) => {
             value={email}
             placeholder="email@email.com"
             onChange={(e) => setEmail(e.target.value)}
+            prefix={<UserOutlined />}
           />
           <br />
           <label htmlFor="password" style={{ fontSize: "1rem" }}>
@@ -133,6 +130,7 @@ const Auth = (props) => {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            prefix={<LockOutlined />}
           />
           <br />
           <br />
