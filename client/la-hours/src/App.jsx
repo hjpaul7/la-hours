@@ -6,7 +6,8 @@ import Auth from "./components/Auth/Auth";
 import LayoutNav from "./components/Layout";
 import { BrowserRouter as Router } from "react-router-dom";
 import Nav from "./components/Home/Nav";
-import Test from "./components/test";
+
+export const TokenContext = React.createContext();
 
 function App() {
   const [token, setToken] = useState("");
@@ -44,18 +45,19 @@ function App() {
   const protectedViews = () => {
     return (token === localStorage.getItem("token")) |
       (localStorage.getItem("token") === !undefined) ? (
-      <LayoutNav token={token} clickLogout={clearToken} firstName={firstName} />
+      <TokenContext.Provider value={token}>
+        <LayoutNav
+          token={token}
+          clickLogout={clearToken}
+          firstName={firstName}
+        />
+      </TokenContext.Provider>
     ) : (
       <Auth updateToken={updateToken} updatedFirstName={updatedFirstName} />
     );
   };
 
-  return (
-    <div className="App">
-      {protectedViews()}
-      <Test />
-    </div>
-  );
+  return <div className="App">{protectedViews()}</div>;
 }
 
 export default App;

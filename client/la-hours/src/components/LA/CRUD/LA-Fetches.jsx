@@ -1,16 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import ViewLearningAssistants from "../View/ViewLearningAssistants";
+import { TokenContext } from "../../../App";
 
 const LAFetches = (props) => {
   const [active, setActive] = useState([]);
   const [todaySchedule, setTodaySchedule] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const token = useContext(TokenContext);
+
   const fetchActiveHours = async () => {
     try {
       const data = await axios
-        .get("https://learninggym1.herokuapp.com/profile/active")
+        .get("https://learninggym1.herokuapp.com/profile/active", {
+          headers: {
+            Authorization: token,
+          },
+        })
         .then((res) => {
           console.log(res.data);
           setActive(res.data);
@@ -25,7 +32,11 @@ const LAFetches = (props) => {
   const fetchTodaysSchedule = async () => {
     try {
       const data = await axios
-        .get("https://learninggym1.herokuapp.com/officeHours/newGetHours")
+        .get("https://learninggym1.herokuapp.com/officeHours/newGetHours", {
+          headers: {
+            Authorization: token,
+          },
+        })
         .then((res) => {
           console.log(res.data.allDay);
           setTodaySchedule(res.data.allDay);

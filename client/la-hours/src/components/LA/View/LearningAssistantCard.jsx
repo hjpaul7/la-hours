@@ -5,6 +5,7 @@ import {
   EllipsisOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
+import zoomIcon from "../../../assets/zoom-icon.png";
 
 const { Meta } = Card;
 
@@ -21,7 +22,7 @@ const LearningAssistantCard = (props) => {
       actions={[
         <a href={props.mappedActive.zoomLink} target="_blank">
           <img
-            src="http://assets.stickpng.com/images/5e8ce318664eae0004085461.png"
+            src={zoomIcon}
             alt="zoom"
             style={{ width: "20px", height: "20px" }}
           />

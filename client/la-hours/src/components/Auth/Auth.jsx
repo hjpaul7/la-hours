@@ -16,20 +16,30 @@ const Auth = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const url = login
-      ? "http://localhost:3000/user/login"
-      : "http://localhost:3000/user/register";
-    const bodyObj = login
-      ? {
-          email: email,
-          password: password,
-        }
-      : {
-          email: email,
-          password: password,
-          firstName: firstName,
-          lastName: lastName,
-        };
+    // OLD LOGIN/REGISTER ------ LG was updated to require LOGIN for GET fetches
+    // const url = login
+    //   ? "http://localhost:3000/user/login"
+    //   : "http://localhost:3000/user/register";
+
+    const url = "https://learninggym1.herokuapp.com/auth/login";
+
+    // OLD LOGIN/REGISTER ------ Using ONLY login now to learning gym server
+    // const bodyObj = login
+    //   ? {
+    //       email: email,
+    //       password: password,
+    //     }
+    //   : {
+    //       email: email,
+    //       password: password,
+    //       firstName: firstName,
+    //       lastName: lastName,
+    //     };
+
+    const bodyObj = {
+      email: email,
+      password: password,
+    };
 
     fetch(url, {
       method: "POST",
@@ -40,9 +50,10 @@ const Auth = (props) => {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         props.updateToken(data.token);
-        props.updatedFirstName(data.user.firstName);
-        console.log(data.user.firstName);
+        props.updatedFirstName(data.first);
+        // console.log(data.user.firstName);
       });
     setLoading(true);
   };
