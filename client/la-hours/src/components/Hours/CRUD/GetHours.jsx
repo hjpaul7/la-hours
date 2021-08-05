@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ViewHours from "../View/ViewHours";
+import APIURL from "../../../helpers/environment";
 
 const GetHours = (props) => {
   const [hours, setHours] = useState([]);
@@ -10,7 +11,7 @@ const GetHours = (props) => {
   const fetchHours = async () => {
     try {
       const data = await axios
-        .get("http://localhost:3000/hours/", {
+        .get(`http://localhost:3000/hours/`, {
           headers: {
             Authorization: props.token,
           },
