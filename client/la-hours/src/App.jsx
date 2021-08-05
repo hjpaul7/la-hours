@@ -56,7 +56,7 @@ function App() {
       <Auth updateToken={updateToken} updatedFirstName={updatedFirstName} />
     );
   };
-
+//  test
   return <div className="App">{protectedViews()}</div>;
 }
 
